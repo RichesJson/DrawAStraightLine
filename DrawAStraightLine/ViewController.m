@@ -62,8 +62,8 @@
     glClear(GL_COLOR_BUFFER_BIT);
     [self.effect prepareToDraw];
     [self uploadVertexArray];
-    [self.particleEffect prepareToDraw];
-    [self.particleEffect draw];
+//    [self.particleEffect prepareToDraw];
+//    [self.particleEffect draw];
 
 
 }
@@ -71,6 +71,7 @@
 
 
 -(void) uploadVertexArray{
+    NSLog(@"touchCont:%d",self.touchArray.count);
     for (int i = 1; i < self.touchArray.count; i++) {
         CGPoint prevPoint = CGPointFromString(self.touchArray[i-1]);
         CGPoint firstPoint = prevPoint;
@@ -108,27 +109,25 @@ CGFloat mi3DProjectdPointX(int x)
     CGFloat projectX;
     projectX=2*x/[[UIScreen mainScreen]bounds].size.width-1;
     projectX=projectX*[[UIScreen mainScreen]bounds].size.width/[[UIScreen mainScreen]bounds].size.height;
-    NSLog(@"x:%f,---- porjectX:%f",x,projectX);
+//    NSLog(@"x:%f,---- porjectX:%f",x,projectX);
     return projectX;
 }
 CGFloat mi3DProjectdPointY(int y){
     CGFloat projectY;
     projectY=  1-2*y/[[UIScreen mainScreen]bounds].size.height;
-    NSLog(@"y:%f,--- porjectY:%f",y,projectY);
+//    NSLog(@"y:%f,--- porjectY:%f",y,projectY);
     return projectY;
 }
 -(void) touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     self.touchArray = [NSMutableArray array];
     [self.allTouchArray addObject:self.touchArray];
     CGPoint pt = [[touches anyObject] locationInView:self.view];
-//    CGPoint projectOpenGL= [self convertToGL:pt];
     [self.touchArray addObject:NSStringFromCGPoint(pt)];
 }
 
 -(void) touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     
 }
-
 -(void) touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     CGPoint pt = [[touches anyObject] locationInView:self.view];
 //    CGPoint projectOpenGL= [self convertToGL:pt];
@@ -139,84 +138,9 @@ CGFloat mi3DProjectdPointY(int y){
     
 }
 
-//MVP矩阵
-- (void)preparePointOfViewWithAspectRatio:(GLfloat)aspectRatio
-{
-    
-    self.particleEffect.transform.projectionMatrix =
-    GLKMatrix4MakePerspective(
-                              GLKMathDegreesToRadians(85.0f),
-                              aspectRatio,
-                              0.1f,
-                              20.0f);
-    self.projectionMatrix=GLKMatrix4MakeLookAt(
-                                               0.0, 0.0, 1.0,   // Eye position
-                                               0.0, 0.0, 0.0,   // Look-at position
-                                               0.0, 1.0, 0.0);  //
-    
-    self.particleEffect.transform.modelviewMatrix =
-    GLKMatrix4MakeLookAt(
-                         0.0, 0.0, 1.0,   // Eye position
-                         0.0, 0.0, 0.0,   // Look-at position
-                         0.0, 1.0, 0.0);  // Up direction
-}
-
-
 - (void)update
 {
-    NSTimeInterval timeElapsed = self.timeSinceFirstResume;
-    
-    self.particleEffect.elapsedSeconds = timeElapsed;
-    
-    if(self.autoSpawnDelta < (timeElapsed - self.lastSpawnTime))
-    {
-        self.lastSpawnTime = timeElapsed;
-        
-        self.autoSpawnDelta = 0.5f;
-        
-        self.particleEffect.gravity = GLKVector3Make(
-                                                     0.0f, 0.0f, 0.0f);
-        
-//        CGPoint mid1;
-//        CGPoint mid2;
-        CGPoint currentPoint;
-        for (int i = 1; i < self.touchArray.count; i++) {
-            CGPoint prevPoint = CGPointFromString(self.touchArray[i-1]);
-            CGPoint firstPoint = prevPoint;
-            if (i > 1) {
-                firstPoint = CGPointFromString(self.touchArray[i-2]);
-            }
-            currentPoint = CGPointFromString(self.touchArray[i]);
-            break ;
-        }
-        CGPoint mid1 = [self convertToGL:currentPoint];
-        for(int i = 0; i < 100; i++)
-        {
-            float randomXVelocity = -0.5f + 1.0f *
-            (float)random() / (float)RAND_MAX;
-            float randomYVelocity = -0.5f + 1.0f *
-            (float)random() / (float)RAND_MAX;
-            float randomZVelocity = -0.5f + 1.0f *
-            (float)random() / (float)RAND_MAX;
-            
-            [self.particleEffect
-             addParticleAtPosition:GLKVector3Make(mid1.x, mid1.y, 0.0f)
-             velocity:GLKVector3Make(
-                                     randomXVelocity,
-                                     randomYVelocity,
-                                     randomZVelocity)
-             force:GLKVector3Make(0.0f, 0.0f, 0.0f)
-             size:4.0f
-             lifeSpanSeconds:3.2f
-             fadeDurationSeconds:0.5f];
-        }
-    }
-//    if(timeElapsed==30){
-//        UIImage * image=[self glToUIImage];
-        NSLog(@"");
-//    }
-    
-    
+
 }
 
 
@@ -278,8 +202,8 @@ CGFloat mi3DProjectdPointY(int y){
     clipCoord.y *= -1.0;
     
     GLKVector3 glCoord = GLKMatrix4MultiplyAndProjectVector3(invTransform, clipCoord);
-    NSLog(@"x:%f,---- porjectX:%f",uiPoint.x,glCoord.x);
-    NSLog(@"y:%f,---- porjectY:%f",uiPoint.y,glCoord.y);
+//    NSLog(@"x:%f,---- porjectX:%f",uiPoint.x,glCoord.x);
+//    NSLog(@"y:%f,---- porjectY:%f",uiPoint.y,glCoord.y);
     return CGPointMake(glCoord.x, glCoord.y);
 }
 
