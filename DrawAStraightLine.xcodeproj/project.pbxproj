@@ -13,6 +13,12 @@
 		9684897E1F9A30740055838D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9684897D1F9A30740055838D /* Assets.xcassets */; };
 		968489811F9A30740055838D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9684897F1F9A30740055838D /* LaunchScreen.storyboard */; };
 		968489841F9A30740055838D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 968489831F9A30740055838D /* main.m */; };
+		96FD5CE31F9DC7C200755683 /* AGLKPointParticleEffect.h in Sources */ = {isa = PBXBuildFile; fileRef = 96FD5CDD1F9DC73600755683 /* AGLKPointParticleEffect.h */; };
+		96FD5CE41F9DC7C600755683 /* AGLKPointParticleEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FD5CDE1F9DC73600755683 /* AGLKPointParticleEffect.m */; };
+		96FD5CE51F9DC7C800755683 /* AGLKVertexAttribArrayBuffer.h in Sources */ = {isa = PBXBuildFile; fileRef = 96FD5CE11F9DC73600755683 /* AGLKVertexAttribArrayBuffer.h */; };
+		96FD5CE61F9DC7C900755683 /* AGLKVertexAttribArrayBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FD5CE21F9DC73600755683 /* AGLKVertexAttribArrayBuffer.m */; };
+		96FD5CE71F9DC9DC00755683 /* AGLKPointParticleShader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 96FD5CE01F9DC73600755683 /* AGLKPointParticleShader.vsh */; };
+		96FD5CE81F9DC9DC00755683 /* AGLKPointParticleShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 96FD5CDF1F9DC73600755683 /* AGLKPointParticleShader.fsh */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +32,12 @@
 		968489801F9A30740055838D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		968489821F9A30740055838D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		968489831F9A30740055838D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		96FD5CDD1F9DC73600755683 /* AGLKPointParticleEffect.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AGLKPointParticleEffect.h; sourceTree = "<group>"; };
+		96FD5CDE1F9DC73600755683 /* AGLKPointParticleEffect.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AGLKPointParticleEffect.m; sourceTree = "<group>"; };
+		96FD5CDF1F9DC73600755683 /* AGLKPointParticleShader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = AGLKPointParticleShader.fsh; sourceTree = "<group>"; };
+		96FD5CE01F9DC73600755683 /* AGLKPointParticleShader.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = AGLKPointParticleShader.vsh; sourceTree = "<group>"; };
+		96FD5CE11F9DC73600755683 /* AGLKVertexAttribArrayBuffer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AGLKVertexAttribArrayBuffer.h; sourceTree = "<group>"; };
+		96FD5CE21F9DC73600755683 /* AGLKVertexAttribArrayBuffer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AGLKVertexAttribArrayBuffer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +54,7 @@
 		968489681F9A30740055838D = {
 			isa = PBXGroup;
 			children = (
+				96FD5CDC1F9DC73600755683 /* Kit */,
 				968489731F9A30740055838D /* DrawAStraightLine */,
 				968489721F9A30740055838D /* Products */,
 			);
@@ -58,6 +71,12 @@
 		968489731F9A30740055838D /* DrawAStraightLine */ = {
 			isa = PBXGroup;
 			children = (
+				96FD5CDD1F9DC73600755683 /* AGLKPointParticleEffect.h */,
+				96FD5CDE1F9DC73600755683 /* AGLKPointParticleEffect.m */,
+				96FD5CDF1F9DC73600755683 /* AGLKPointParticleShader.fsh */,
+				96FD5CE01F9DC73600755683 /* AGLKPointParticleShader.vsh */,
+				96FD5CE11F9DC73600755683 /* AGLKVertexAttribArrayBuffer.h */,
+				96FD5CE21F9DC73600755683 /* AGLKVertexAttribArrayBuffer.m */,
 				968489741F9A30740055838D /* AppDelegate.h */,
 				968489751F9A30740055838D /* AppDelegate.m */,
 				968489771F9A30740055838D /* ViewController.h */,
@@ -69,6 +88,13 @@
 				968489831F9A30740055838D /* main.m */,
 			);
 			path = DrawAStraightLine;
+			sourceTree = "<group>";
+		};
+		96FD5CDC1F9DC73600755683 /* Kit */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Kit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,6 +157,8 @@
 			files = (
 				968489811F9A30740055838D /* LaunchScreen.storyboard in Resources */,
 				9684897E1F9A30740055838D /* Assets.xcassets in Resources */,
+				96FD5CE71F9DC9DC00755683 /* AGLKPointParticleShader.vsh in Resources */,
+				96FD5CE81F9DC9DC00755683 /* AGLKPointParticleShader.fsh in Resources */,
 				9684897C1F9A30740055838D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -144,6 +172,10 @@
 			files = (
 				968489791F9A30740055838D /* ViewController.m in Sources */,
 				968489841F9A30740055838D /* main.m in Sources */,
+				96FD5CE41F9DC7C600755683 /* AGLKPointParticleEffect.m in Sources */,
+				96FD5CE51F9DC7C800755683 /* AGLKVertexAttribArrayBuffer.h in Sources */,
+				96FD5CE31F9DC7C200755683 /* AGLKPointParticleEffect.h in Sources */,
+				96FD5CE61F9DC7C900755683 /* AGLKVertexAttribArrayBuffer.m in Sources */,
 				968489761F9A30740055838D /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

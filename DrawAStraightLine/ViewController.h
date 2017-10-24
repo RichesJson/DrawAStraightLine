@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface ViewController : UIViewController
+#import <GLKit/GLKit.h>
+#import <OpenGLES/ES3/gl.h>
+#import <OpenGLES/ES3/glext.h>
+#import <GLKit/GLKBaseEffect.h>
+@interface ViewController : GLKViewController
 
 
 @end
