@@ -11,13 +11,13 @@
 #import <OpenGLES/ES3/gl.h>
 #import <OpenGLES/ES3/glext.h>
 #import <GLKit/GLKBaseEffect.h>
-#import "AGLKPointParticleEffect.h"
+//#import "AGLKPointParticleEffect.h"
 @interface ViewController ()
 @property(nonatomic,strong) EAGLContext * mContext;
 @property(nonatomic,strong) GLKBaseEffect *effect;
 @property (strong)  NSMutableArray *touchArray;  //单前绘制的点阵
 @property (strong)  NSMutableArray *allTouchArray; //总绘制点阵
-@property (strong, nonatomic) AGLKPointParticleEffect *particleEffect;
+//@property (strong, nonatomic) AGLKPointParticleEffect *particleEffect;
 @property (assign, nonatomic) NSTimeInterval autoSpawnDelta;
 @property (assign, nonatomic) NSTimeInterval lastSpawnTime;
 @property (strong, nonatomic) NSArray *emitterBlocks;
@@ -40,12 +40,12 @@
     self.effect.useConstantColor=GL_TRUE;
     self.effect.constantColor=GLKVector4Make(0.0f, 1.0f, 1.0f, 1.0f);
     self.allTouchArray = [NSMutableArray array];
-    self.particleEffect = [[AGLKPointParticleEffect alloc] init];
+//    self.particleEffect = [[AGLKPointParticleEffect alloc] init];
     glEnable(GL_DEPTH_TEST);
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-    [self preparePointOfViewWithAspectRatio:
-     CGRectGetWidth(self.view.bounds) / CGRectGetHeight(self.view.bounds)];
+//    [self preparePointOfViewWithAspectRatio:
+//     CGRectGetWidth(self.view.bounds) / CGRectGetHeight(self.view.bounds)];
 
 }
 
@@ -61,7 +61,7 @@
     //启动着色器
     glClear(GL_COLOR_BUFFER_BIT);
     [self.effect prepareToDraw];
-    [self uploadVertexArray];
+//    [self uploadVertexArray];
 //    [self.particleEffect prepareToDraw];
 //    [self.particleEffect draw];
 
@@ -69,34 +69,34 @@
 }
 
 
-
--(void) uploadVertexArray{
-    NSLog(@"touchCont:%d",self.touchArray.count);
-    for (int i = 1; i < self.touchArray.count; i++) {
-        CGPoint prevPoint = CGPointFromString(self.touchArray[i-1]);
-        CGPoint firstPoint = prevPoint;
-        if (i > 1) {
-            firstPoint = CGPointFromString(self.touchArray[i-2]);
-        }
-        CGPoint currentPoint = CGPointFromString(self.touchArray[i]);
-        CGPoint mid1 = [self convertToGL:(midPoint(prevPoint, firstPoint))];
-        CGPoint mid2 = [self convertToGL:(midPoint(currentPoint, prevPoint))];
-//        CGPoint mid1 = [self convertToGL:prevPoint];
-//        CGPoint mid2 = [self convertToGL:currentPoint];
-        GLfloat line[]={
-                    mid1.x,mid1.y, 0.0f, // left
-                    mid2.x,mid2.y,0.0f,
-                };
-        GLuint bufferObjectNameArray;
-        glGenBuffers(1, &bufferObjectNameArray);
-        glBindBuffer(GL_ARRAY_BUFFER, bufferObjectNameArray);
-        glBufferData(GL_ARRAY_BUFFER, sizeof(line), line, GL_STATIC_DRAW);
-        glEnableVertexAttribArray(GLKVertexAttribPosition);
-        glVertexAttribPointer(GLKVertexAttribPosition, 2, GL_FLOAT, GL_FALSE, 2*4, NULL);
-        glDrawArrays(GL_LINES, 0, 2);
-        
-    }
-}
+//
+//-(void) uploadVertexArray{
+//    NSLog(@"touchCont:%d",self.touchArray.count);
+//    for (int i = 1; i < self.touchArray.count; i++) {
+//        CGPoint prevPoint = CGPointFromString(self.touchArray[i-1]);
+//        CGPoint firstPoint = prevPoint;
+//        if (i > 1) {
+//            firstPoint = CGPointFromString(self.touchArray[i-2]);
+//        }
+//        CGPoint currentPoint = CGPointFromString(self.touchArray[i]);
+//        CGPoint mid1 = [self convertToGL:(midPoint(prevPoint, firstPoint))];
+//        CGPoint mid2 = [self convertToGL:(midPoint(currentPoint, prevPoint))];
+////        CGPoint mid1 = [self convertToGL:prevPoint];
+////        CGPoint mid2 = [self convertToGL:currentPoint];
+//        GLfloat line[]={
+//                    mid1.x,mid1.y, 0.0f, // left
+//                    mid2.x,mid2.y,0.0f,
+//                };
+//        GLuint bufferObjectNameArray;
+//        glGenBuffers(1, &bufferObjectNameArray);
+//        glBindBuffer(GL_ARRAY_BUFFER, bufferObjectNameArray);
+//        glBufferData(GL_ARRAY_BUFFER, sizeof(line), line, GL_STATIC_DRAW);
+//        glEnableVertexAttribArray(GLKVertexAttribPosition);
+//        glVertexAttribPointer(GLKVertexAttribPosition, 2, GL_FLOAT, GL_FALSE, 2*4, NULL);
+//        glDrawArrays(GL_LINES, 0, 2);
+//
+//    }
+//}
 
 
 CGPoint midPoint(CGPoint p1, CGPoint p2)
