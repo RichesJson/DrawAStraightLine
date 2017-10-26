@@ -121,12 +121,12 @@
     glClearColor(0.1, 0.2, 0.3, 1);
     //启动着色器
     glClear(GL_COLOR_BUFFER_BIT);
-//    [self.brushRenderer prepareToDraw];
+    [self.brushRenderer prepareToDraw];
     [self.particleEffect prepareToDraw];
-    [self.particleEffect draw];
-    [glkView  start];
-    [self update];
-    [glkView render];
+//    [self.particleEffect draw];
+//    [glkView  start];
+//    [self update];
+//    [glkView render];
  
     
 }
