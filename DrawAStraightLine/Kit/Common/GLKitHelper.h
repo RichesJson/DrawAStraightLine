@@ -1,7 +1,7 @@
 //
-//  BrushRenderer.h
+//  GLKitHelper.h
 //  DrawAStraightLine
-//  艺术字渲染器-画笔
+//
 //  Created by richsjeson on 2017/10/25.
 //  Copyright © 2017年 richsjeson. All rights reserved.
 //
@@ -12,6 +12,10 @@
 #import <GLKit/GLKit.h>
 #import <OpenGLES/EAGLDrawable.h>
 #import <UIKit/UIKit.h>
-@interface BrushRenderer : NSObject
-
+@interface GLKitHelper : NSObject
+//Shader读取操作
++ (BOOL)compileShader:(GLuint *)shader
+                 type:(GLenum)type
+                 file:(NSString *)file;
++(BOOL)linkProgram:(GLuint)prog;
 @end

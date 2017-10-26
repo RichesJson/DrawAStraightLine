@@ -1,46 +1,16 @@
 //
-//  BrushRenderer.m
+//  GLKitHelper.m
 //  DrawAStraightLine
 //
 //  Created by richsjeson on 2017/10/25.
 //  Copyright © 2017年 richsjeson. All rights reserved.
 //
 
-#import "BrushRenderer.h"
+#import "GLKitHelper.h"
 
-@implementation BrushRenderer
-//绘制渲染器
-- (BOOL)loadShaders{
-    
-    GLuint vertShader, fragShader;
-    NSString *vertShaderPathname, *fragShaderPathname;
-    // Create shader program.
-    //创建顶点渲染器
-    vertShaderPathname = [[NSBundle mainBundle] pathForResource:
-                                                   @"point" ofType:@"vsh"];
-    if (![self compileShader:&vertShader type:GL_VERTEX_SHADER
-                        file:vertShaderPathname])
-    {
-        NSLog(@"Failed to compile vertex shader");
-        return NO;
-    }
-    
-    // 创建片段渲染器.
-    fragShaderPathname = [[NSBundle mainBundle] pathForResource:
-                          @"point" ofType:@"fsh"];
-    if (![self compileShader:&fragShader type:GL_FRAGMENT_SHADER
-                        file:fragShaderPathname])
-    {
-        NSLog(@"Failed to compile fragment shader");
-        return NO;
-    }
-    
-    //
-    return YES;
-    
-}
-
-- (BOOL)compileShader:(GLuint *)shader
+@implementation GLKitHelper
+//编译
++(BOOL)compileShader:(GLuint *)shader
                  type:(GLenum)type
                  file:(NSString *)file
 {
@@ -74,6 +44,32 @@
     if (status == 0)
     {
         glDeleteShader(*shader);
+        return NO;
+    }
+    
+    return YES;
+}
+//连接
++(BOOL)linkProgram:(GLuint)prog
+{
+    GLint status;
+    glLinkProgram(prog);
+    
+#if defined(DEBUG)
+    GLint logLength;
+    glGetProgramiv(prog, GL_INFO_LOG_LENGTH, &logLength);
+    if (logLength > 0)
+    {
+        GLchar *log = (GLchar *)malloc(logLength);
+        glGetProgramInfoLog(prog, logLength, &logLength, log);
+        NSLog(@"Program link log:\n%s", log);
+        free(log);
+    }
+#endif
+    
+    glGetProgramiv(prog, GL_LINK_STATUS, &status);
+    if (status == 0)
+    {
         return NO;
     }
     

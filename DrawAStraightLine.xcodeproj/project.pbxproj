@@ -7,9 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9648277B1FA027A40062C54A /* BrushRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9648277A1FA027A40062C54A /* BrushRenderer.m */; };
-		9648277E1FA028770062C54A /* point.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 9648277C1FA028770062C54A /* point.vsh */; };
-		9648277F1FA028770062C54A /* point.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 9648277D1FA028770062C54A /* point.fsh */; };
+		9648279A1FA02E170062C54A /* GLKitHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 964827991FA02E170062C54A /* GLKitHelper.m */; };
+		9648279F1FA02E690062C54A /* point.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 9648279C1FA02E690062C54A /* point.vsh */; };
+		964827A01FA02E690062C54A /* BrushRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9648279D1FA02E690062C54A /* BrushRenderer.m */; };
+		964827A11FA02E690062C54A /* point.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 9648279E1FA02E690062C54A /* point.fsh */; };
+		96603C331FA09B0C00009BAD /* GLKitView.m in Sources */ = {isa = PBXBuildFile; fileRef = 96603C321FA09B0C00009BAD /* GLKitView.m */; };
+		96603C391FA0B0A800009BAD /* ParticleRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 96603C381FA0B0A800009BAD /* ParticleRenderer.m */; };
+		96603C3B1FA0B1D800009BAD /* PointParticle.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 96603C3A1FA0B1D800009BAD /* PointParticle.fsh */; };
+		96603C3D1FA0B1E300009BAD /* PointParticle.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 96603C3C1FA0B1E300009BAD /* PointParticle.vsh */; };
+		96603C3F1FA0BC3C00009BAD /* AGLKVertexAttribArrayBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 96603C3E1FA0BC3C00009BAD /* AGLKVertexAttribArrayBuffer.m */; };
+		96603C421FA0BC5900009BAD /* AGLKPointParticleEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 96603C411FA0BC5900009BAD /* AGLKPointParticleEffect.m */; };
+		96603C451FA0BE4200009BAD /* AGLKPointParticleShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 96603C441FA0BE4200009BAD /* AGLKPointParticleShader.fsh */; };
+		96603C471FA0BE4C00009BAD /* AGLKPointParticleShader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 96603C461FA0BE4C00009BAD /* AGLKPointParticleShader.vsh */; };
 		968489761F9A30740055838D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 968489751F9A30740055838D /* AppDelegate.m */; };
 		968489791F9A30740055838D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 968489781F9A30740055838D /* ViewController.m */; };
 		9684897C1F9A30740055838D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9684897A1F9A30740055838D /* Main.storyboard */; };
@@ -19,10 +28,24 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		964827791FA027A40062C54A /* BrushRenderer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BrushRenderer.h; path = Kit/BrushRenderer.h; sourceTree = "<group>"; };
-		9648277A1FA027A40062C54A /* BrushRenderer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = BrushRenderer.m; path = Kit/BrushRenderer.m; sourceTree = "<group>"; };
-		9648277C1FA028770062C54A /* point.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = point.vsh; sourceTree = "<group>"; };
-		9648277D1FA028770062C54A /* point.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = point.fsh; sourceTree = "<group>"; };
+		964827981FA02E110062C54A /* GLKitHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GLKitHelper.h; path = DrawAStraightLine/Kit/Common/GLKitHelper.h; sourceTree = SOURCE_ROOT; };
+		964827991FA02E170062C54A /* GLKitHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GLKitHelper.m; path = DrawAStraightLine/Kit/Common/GLKitHelper.m; sourceTree = SOURCE_ROOT; };
+		9648279B1FA02E690062C54A /* BrushRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BrushRenderer.h; path = Kit/BrushRenderer/BrushRenderer.h; sourceTree = "<group>"; };
+		9648279C1FA02E690062C54A /* point.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = point.vsh; path = Kit/BrushRenderer/point.vsh; sourceTree = "<group>"; };
+		9648279D1FA02E690062C54A /* BrushRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BrushRenderer.m; path = Kit/BrushRenderer/BrushRenderer.m; sourceTree = "<group>"; };
+		9648279E1FA02E690062C54A /* point.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = point.fsh; path = Kit/BrushRenderer/point.fsh; sourceTree = "<group>"; };
+		96603C311FA09B0C00009BAD /* GLKitView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GLKitView.h; path = DrawAStraightLine/Kit/Common/GLKitView.h; sourceTree = SOURCE_ROOT; };
+		96603C321FA09B0C00009BAD /* GLKitView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = GLKitView.m; path = DrawAStraightLine/Kit/Common/GLKitView.m; sourceTree = SOURCE_ROOT; };
+		96603C371FA0B0A800009BAD /* ParticleRenderer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ParticleRenderer.h; path = Kit/Particle/ParticleRenderer.h; sourceTree = "<group>"; };
+		96603C381FA0B0A800009BAD /* ParticleRenderer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ParticleRenderer.m; path = Kit/Particle/ParticleRenderer.m; sourceTree = "<group>"; };
+		96603C3A1FA0B1D800009BAD /* PointParticle.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = PointParticle.fsh; path = Kit/Particle/PointParticle.fsh; sourceTree = "<group>"; };
+		96603C3C1FA0B1E300009BAD /* PointParticle.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = PointParticle.vsh; path = Kit/Particle/PointParticle.vsh; sourceTree = "<group>"; };
+		96603C3E1FA0BC3C00009BAD /* AGLKVertexAttribArrayBuffer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AGLKVertexAttribArrayBuffer.m; path = Kit/Particle/AGLKVertexAttribArrayBuffer.m; sourceTree = "<group>"; };
+		96603C401FA0BC4700009BAD /* AGLKVertexAttribArrayBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AGLKVertexAttribArrayBuffer.h; path = Kit/Particle/AGLKVertexAttribArrayBuffer.h; sourceTree = "<group>"; };
+		96603C411FA0BC5900009BAD /* AGLKPointParticleEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AGLKPointParticleEffect.m; path = Kit/Particle/AGLKPointParticleEffect.m; sourceTree = "<group>"; };
+		96603C431FA0BC6300009BAD /* AGLKPointParticleEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AGLKPointParticleEffect.h; path = Kit/Particle/AGLKPointParticleEffect.h; sourceTree = "<group>"; };
+		96603C441FA0BE4200009BAD /* AGLKPointParticleShader.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = AGLKPointParticleShader.fsh; path = Kit/Particle/AGLKPointParticleShader.fsh; sourceTree = "<group>"; };
+		96603C461FA0BE4C00009BAD /* AGLKPointParticleShader.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = AGLKPointParticleShader.vsh; path = Kit/Particle/AGLKPointParticleShader.vsh; sourceTree = "<group>"; };
 		968489711F9A30740055838D /* DrawAStraightLine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrawAStraightLine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		968489741F9A30740055838D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		968489751F9A30740055838D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -46,15 +69,53 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		964827781FA0276B0062C54A /* Kit */ = {
+		964827851FA02BC90062C54A /* Kit */ = {
 			isa = PBXGroup;
 			children = (
-				9648277D1FA028770062C54A /* point.fsh */,
-				9648277C1FA028770062C54A /* point.vsh */,
-				964827791FA027A40062C54A /* BrushRenderer.h */,
-				9648277A1FA027A40062C54A /* BrushRenderer.m */,
+				964827891FA02BF10062C54A /* Particle */,
+				964827871FA02BE00062C54A /* BrushRenderer */,
+				964827861FA02BD30062C54A /* Common */,
 			);
 			name = Kit;
+			sourceTree = "<group>";
+		};
+		964827861FA02BD30062C54A /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				964827991FA02E170062C54A /* GLKitHelper.m */,
+				964827981FA02E110062C54A /* GLKitHelper.h */,
+				96603C311FA09B0C00009BAD /* GLKitView.h */,
+				96603C321FA09B0C00009BAD /* GLKitView.m */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		964827871FA02BE00062C54A /* BrushRenderer */ = {
+			isa = PBXGroup;
+			children = (
+				9648279B1FA02E690062C54A /* BrushRenderer.h */,
+				9648279D1FA02E690062C54A /* BrushRenderer.m */,
+				9648279E1FA02E690062C54A /* point.fsh */,
+				9648279C1FA02E690062C54A /* point.vsh */,
+			);
+			name = BrushRenderer;
+			sourceTree = "<group>";
+		};
+		964827891FA02BF10062C54A /* Particle */ = {
+			isa = PBXGroup;
+			children = (
+				96603C461FA0BE4C00009BAD /* AGLKPointParticleShader.vsh */,
+				96603C441FA0BE4200009BAD /* AGLKPointParticleShader.fsh */,
+				96603C431FA0BC6300009BAD /* AGLKPointParticleEffect.h */,
+				96603C411FA0BC5900009BAD /* AGLKPointParticleEffect.m */,
+				96603C401FA0BC4700009BAD /* AGLKVertexAttribArrayBuffer.h */,
+				96603C3E1FA0BC3C00009BAD /* AGLKVertexAttribArrayBuffer.m */,
+				96603C3C1FA0B1E300009BAD /* PointParticle.vsh */,
+				96603C3A1FA0B1D800009BAD /* PointParticle.fsh */,
+				96603C371FA0B0A800009BAD /* ParticleRenderer.h */,
+				96603C381FA0B0A800009BAD /* ParticleRenderer.m */,
+			);
+			name = Particle;
 			sourceTree = "<group>";
 		};
 		968489681F9A30740055838D = {
@@ -76,7 +137,7 @@
 		968489731F9A30740055838D /* DrawAStraightLine */ = {
 			isa = PBXGroup;
 			children = (
-				964827781FA0276B0062C54A /* Kit */,
+				964827851FA02BC90062C54A /* Kit */,
 				968489741F9A30740055838D /* AppDelegate.h */,
 				968489751F9A30740055838D /* AppDelegate.m */,
 				968489771F9A30740055838D /* ViewController.h */,
@@ -148,10 +209,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9648277F1FA028770062C54A /* point.fsh in Resources */,
+				96603C3B1FA0B1D800009BAD /* PointParticle.fsh in Resources */,
+				964827A11FA02E690062C54A /* point.fsh in Resources */,
+				96603C3D1FA0B1E300009BAD /* PointParticle.vsh in Resources */,
 				968489811F9A30740055838D /* LaunchScreen.storyboard in Resources */,
+				96603C471FA0BE4C00009BAD /* AGLKPointParticleShader.vsh in Resources */,
 				9684897E1F9A30740055838D /* Assets.xcassets in Resources */,
-				9648277E1FA028770062C54A /* point.vsh in Resources */,
+				9648279F1FA02E690062C54A /* point.vsh in Resources */,
+				96603C451FA0BE4200009BAD /* AGLKPointParticleShader.fsh in Resources */,
 				9684897C1F9A30740055838D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -163,10 +228,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96603C421FA0BC5900009BAD /* AGLKPointParticleEffect.m in Sources */,
 				968489791F9A30740055838D /* ViewController.m in Sources */,
-				9648277B1FA027A40062C54A /* BrushRenderer.m in Sources */,
+				9648279A1FA02E170062C54A /* GLKitHelper.m in Sources */,
+				96603C331FA09B0C00009BAD /* GLKitView.m in Sources */,
 				968489841F9A30740055838D /* main.m in Sources */,
+				96603C3F1FA0BC3C00009BAD /* AGLKVertexAttribArrayBuffer.m in Sources */,
 				968489761F9A30740055838D /* AppDelegate.m in Sources */,
+				964827A01FA02E690062C54A /* BrushRenderer.m in Sources */,
+				96603C391FA0B0A800009BAD /* ParticleRenderer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
